@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener</title>
+</head>
+<body>
+    
+    <h1>EventListner Demo</h1>
+
+    <button id="clickIt">Click here</button> 
+  
+    <p id="hoverPara">Hover over this Text !</p> 
+  
+    <b id="effect"></b> 
+  <BR>
+    <input id="elem" type="button" value="Click me"/> <br>
+    <button id="btn1">coforge</button>
+    <script>
+     const x=document.getElementById("clickIt")  ;
+     const y=document.getElementById("hoverPara")  ;
+     const z=document.getElementById("btn1")
+
+     x.addEventListener("click",RespondClick);
+     y.addEventListener("mouseover",RespondMouseOver)
+     y.addEventListener("mouseout",RespondMouseOut)
+     z.addEventListener("click",RespondClick);
+
+     function RespondMouseOver() { 
+            document.getElementById("effect").innerHTML += 
+                       "MouseOver Event" + "<br>"; 
+        } 
+  
+        function RespondMouseOut() { 
+            document.getElementById("effect").innerHTML += 
+                      "MouseOut Event" + "<br>"; 
+        } 
+  
+        function RespondClick() { 
+            document.getElementById("effect").innerHTML += 
+                      "Click Event" + "<br>"; 
+        } 
+
+        function handler1(){alert('thanks');};
+        function handler2(){alert('thanks again');};
+
+        elem.onClick=()=>alert("helloo");
+        elem.addEventListener("click",handler1);//addevent listener is used to call twwo function for one event/action
+        elem.addEventListener("click",handler2);
+        btn1.addEventListener("click",function(){alert("I am in board room");});
+    </script>
+    
+</body>
+</html>
